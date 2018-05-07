@@ -328,6 +328,7 @@ def numbers_increasing_forward(r, maxnum):
     two problems.  But now each row has one 1, two 2s, three 3s,
     four 4s, etc. up to the given maxnum.
 
+
     For example, when r = 4 and maxnum = 3:
        1 22 333
        1 22 333
