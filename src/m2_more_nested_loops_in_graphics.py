@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of TWO-DIMENSIONAL GRAPHICS.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Mariah Mufich.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -52,7 +52,34 @@ def draw_upside_down_wall(rectangle, n, window):
     # TODO: 2. Implement and test this function.
     #     Some tests are already written for you (above).
     # ------------------------------------------------------------------
+    orig_c1x = rectangle.corner_1.x
+    orig_c1y = rectangle.corner_1.y
+    orig_c2x = rectangle.corner_2.x
+    orig_c2y = rectangle.corner_2.y
 
+    c1x = orig_c1x
+    c1y = orig_c1y
+    c2x = orig_c2x
+    c2y = orig_c2y
+    height = rectangle.get_height()
+    width = rectangle.get_width()
+
+    c1 = rg.Point(c1x, c1y)
+    c2 = rg.Point(c2x, c2y)
+
+
+    for k in range(n):
+        for j in range(k + 1):
+            new_rect = rg.Rectangle(c1, c2)
+            new_rect.attach_to(window)
+            window.render(.1)
+
+            c1x = c1x + width
+            c2x = c2x + width
+        c1x = orig_c1x - (k +1) * (width) * (0.5)
+        c2x = orig_c2x - (k + 1) * (width) * (0.5)
+        c1y = c1y - height
+        c2y = c2y - height
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
