@@ -96,7 +96,7 @@ def largest_number(seq_seq):
 def run_test_largest_negative_number():
     """ Tests the    largest_negative_number    function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  largest_negative_number  function defined below.
     #
     #   Include enough tests to give you confidence that your solution
@@ -107,6 +107,20 @@ def run_test_largest_negative_number():
     print('Testing the   LARGEST_NEGATIVE_NUMBER   function:')
     print('-------------------------------------------------')
 
+    # Test 1
+    expected = -3
+    answer = largest_negative_number(([-3], [225], [4]))
+    print('Expected and actual are', expected, answer)
+
+    # Test 2
+    expected = -20
+    answer = largest_negative_number(([-3], [-20], [-5]))
+    print('Expected and actual are', expected, answer)
+
+    # Test 2
+    expected = -429
+    answer = largest_negative_number(([-3], [-20], [-429]))
+    print('Expected and actual are', expected, answer)
 
 def largest_negative_number(seq_seq):
     """
@@ -131,13 +145,26 @@ def largest_negative_number(seq_seq):
     where each subsequence contains only numbers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # CHALLENGE: Try to solve this problem with no additional sequences
     #   being constructed (so the SPACE allowed is limited to the
     #   give sequence of sequences plus any non-list variables you want).
     # ------------------------------------------------------------------
+
+
+    smallest = 0
+    for k in range(len(seq_seq)):
+        if len(seq_seq[k]) != 0:
+            smallest = 0
+    for j in range(len(seq_seq)):
+        if len(seq_seq[j]) != 0:
+            for i in range(len(seq_seq[j])):
+                if seq_seq[j][i] < smallest:
+                    smallest = seq_seq[j][i]
+    return smallest
+
 
 
 def run_test_first_is_elsewhere_too():
@@ -386,7 +413,7 @@ def first_is_elsewhere_too(seq_seq):
     #   in this problem, as doing so would defeat the goal of providing
     #   practice at loops within loops (within loops within ...)
     # ------------------------------------------------------------------
-
+    
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
