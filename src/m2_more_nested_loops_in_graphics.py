@@ -76,10 +76,10 @@ def draw_upside_down_wall(rectangle, n, window):
 
             c1x = c1x + width
             c2x = c2x + width
-        c1x = orig_c1x - (k +1) * (width) * (0.5)
+        c1x = orig_c1x - (k + 1) * (width) * (0.5)
         c2x = orig_c2x - (k + 1) * (width) * (0.5)
-        c1y = c1y - height
-        c2y = c2y - height
+        c1y = orig_c1y - height
+        c2y = orig_c2y - height
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

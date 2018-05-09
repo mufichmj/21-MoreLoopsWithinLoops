@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Mariah Mufich.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -75,6 +75,17 @@ def largest_number(seq_seq):
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+    max = 0
+    for k in range(len(seq_seq)):
+        if len(seq_seq[k]) != 0:
+            max = seq_seq[k][0]
+    for j in range(len(seq_seq)):
+        if len(seq_seq[j]) != 0:
+            for i in range(len(seq_seq[j])):
+                if seq_seq[j][i] > max:
+                    max = seq_seq[j][i]
+    return max
+
 
 
 def run_test_largest_negative_number():
